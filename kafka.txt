@@ -1,9 +1,11 @@
 ZOOKEEPER
 bin\windows\zookeeper-server-start.bat config\zookeeper.properties
-KAFKA
 
+KAFKA
 bin\windows\kafka-server-start.bat config\zookeeper.properties
+
 PRODUCER
 bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --paartition 1 --topic kafka-surya
+
 CONSUMER
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic kafka-surya --from-beginning
